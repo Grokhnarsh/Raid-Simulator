@@ -1,0 +1,168 @@
+{
+  "provider": "Poly Haven",
+  "license_url": "https://polyhaven.com/license",
+  "download_method": "Blender MCP download_polyhaven_asset",
+  "date": "2026-09-16",
+  "assets": [
+    {
+      "id": "boulder_01",
+      "url": "https://polyhaven.com/a/boulder_01",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "objects": [
+        "boulder_01"
+      ],
+      "triangles": 66122,
+      "file": "boulder_01.blend",
+      "bytes": 6386984,
+      "sha256": "943e8f8e7dc6691c4612159eaf52c952b69a972527420bbbe192fead48ce0c78",
+      "status": "downloaded_source_requires_style_adaptation"
+    },
+    {
+      "id": "dead_tree_trunk",
+      "url": "https://polyhaven.com/a/dead_tree_trunk",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "objects": [
+        "dead_tree_trunk"
+      ],
+      "triangles": 101802,
+      "file": "dead_tree_trunk.blend",
+      "bytes": 7359384,
+      "sha256": "604fa03e56c961c10461e150ce0f0752cdeebfbd6512cff812a00974ae14ba6f",
+      "status": "downloaded_source_requires_style_adaptation"
+    },
+    {
+      "id": "fern_02",
+      "url": "https://polyhaven.com/a/fern_02",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "objects": [
+        "fern_02_b",
+        "fern_02_c",
+        "fern_02_a",
+        "fern_02_d"
+      ],
+      "triangles": 6232,
+      "file": "fern_02.blend",
+      "bytes": 1215538,
+      "sha256": "32993b6fc5b25b64d1edbf1fcb8ee0f726722de8a7908696c729d68785394abd",
+      "status": "downloaded_source_requires_style_adaptation"
+    },
+    {
+      "id": "antique_ceramic_vase_01",
+      "url": "https://polyhaven.com/a/antique_ceramic_vase_01",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "objects": [
+        "antique_ceramic_vase_01"
+      ],
+      "triangles": 9408,
+      "file": "antique_ceramic_vase_01.blend",
+      "bytes": 615867,
+      "sha256": "74a8a2eb1406ab90948f6cc27def3a5ec8f8a522528331d5e2cc2bce8999d1f1",
+      "status": "downloaded_source_requires_style_adaptation"
+    },
+    {
+      "id": "brass_pot_01",
+      "url": "https://polyhaven.com/a/brass_pot_01",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "objects": [
+        "brass_pot_01"
+      ],
+      "triangles": 3760,
+      "file": "brass_pot_01.blend",
+      "bytes": 1632176,
+      "sha256": "abcf7a9f0187f56783840409e86750084c27c30b32cf11291fb6cdcfaa92d11a",
+      "status": "downloaded_source_requires_style_adaptation"
+    },
+    {
+      "id": "dry_branches_medium_01",
+      "url": "https://polyhaven.com/a/dry_branches_medium_01",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "objects": [
+        "dry_branches_medium_01_c",
+        "dry_branches_medium_01_b",
+        "dry_branches_medium_01_a"
+      ],
+      "triangles": 16803,
+      "file": "dry_branches_medium_01.blend",
+      "bytes": 3546486,
+      "sha256": "15ff55ab3cdd4d88d52c5d7c6acfc7a09bfb08df2e20ad8a8c011543794b375c",
+      "status": "downloaded_source_requires_style_adaptation"
+    },
+    {
+      "id": "modular_fort_01",
+      "url": "https://polyhaven.com/a/modular_fort_01",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "objects": [
+        "modular_fort_01_wall_thick_corner_02",
+        "modular_fort_01_tower_round",
+        "modular_fort_01_wall_thick_straight_01",
+        "modular_fort_01_wall_thick_end_02",
+        "modular_fort_01_wall_thick_corner_01",
+        "modular_fort_01_wall_thick_thin_transition_01",
+        "modular_fort_01_wall_thin_straight_01",
+        "modular_fort_01_wall_thin_corner_01",
+        "modular_fort_01_wall_thin_corner_02",
+        "modular_fort_01_wall_thin_straight_02",
+        "modular_fort_01_wall_thin_straight_04",
+        "modular_fort_01_wall_thick_end_01",
+        "modular_fort_01_wall_thin_gate_01",
+        "modular_fort_01_wall_thin_corner_03",
+        "modular_fort_01_wall_thin_straight_03",
+        "modular_fort_01_wall_walkway_straight_01",
+        "modular_fort_01_wall_walkway_corner_01",
+        "modular_fort_01_wall_stairs_straight_01",
+        "modular_fort_01_wall_walkway_corner_02",
+        "modular_fort_01_wall_thick_straight_02",
+        "modular_fort_01_wall_walkway_straight_02",
+        "modular_fort_01_wall_walkway_end_01"
+      ],
+      "triangles": 28218,
+      "file": "modular_fort_01.blend",
+      "bytes": 10711873,
+      "sha256": "791b2e10ecb8a907473e3e33f0dbcceeb325d277ee4689b4480c4cea33b2d89b",
+      "status": "downloaded_source_requires_style_adaptation"
+    },
+    {
+      "id": "modular_wooden_pier",
+      "url": "https://polyhaven.com/a/modular_wooden_pier",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "objects": [
+        "modular_wooden_pier_poles",
+        "modular_wooden_pier_planks",
+        "modular_wooden_pier_section_01",
+        "modular_wooden_pier_section_02",
+        "modular_wooden_pier_section_03",
+        "modular_wooden_pier_section_05",
+        "modular_wooden_pier_section_04"
+      ],
+      "triangles": 84780,
+      "file": "modular_wooden_pier.blend",
+      "bytes": 8455749,
+      "sha256": "a60ed5f7cd876a875defcedfca79431517ef279c914ab3cd07d6f6fa22ccdb61",
+      "status": "downloaded_source_requires_style_adaptation"
+    },
+    {
+      "id": "large_castle_door",
+      "url": "https://polyhaven.com/a/large_castle_door",
+      "license": "CC0-1.0",
+      "resolution": "1k",
+      "objects": [
+        "large_castle_door_frame",
+        "large_castle_door_right",
+        "large_castle_door_left"
+      ],
+      "triangles": 12640,
+      "file": "large_castle_door.blend",
+      "bytes": 3327385,
+      "sha256": "4b123328d6a239ce3d3fb243ff5ecd71bbc2546a7ffd7367c852d01bd1455688",
+      "status": "downloaded_source_requires_style_adaptation"
+    }
+  ]
+}
