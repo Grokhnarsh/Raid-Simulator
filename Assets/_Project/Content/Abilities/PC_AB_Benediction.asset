@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baad950d78bc16b489ba9d2a6981f74b, type: 3}
+  m_Name: PC_AB_Benediction
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.AbilityDefinition
+  DisplayName: Benediction
+  Description: Heals everyone standing close together.
+  Icon: {fileID: 0}
+  TargetKind: 1
+  AffectsFaction: 1
+  Shape:
+    Kind: 1
+    Radius: 3
+    InnerRadius: 0
+    Length: 1
+    Width: 1
+    Angle: 90
+  Range: 8
+  RequiresLineOfSight: 1
+  ShapeRespectsLineOfSight: 1
+  CastTime: 1.8
+  CastableWhileMoving: 0
+  Cooldown: 12
+  TriggersGlobalCooldown: 1
+  TelegraphLeadTime: 0
+  ResourceCost: 0
+  Effects:
+  - rid: 8783476368622485550
+  ThreatMultiplier: 1
+  AiPriority: 5
+  AiMinTargets: 2
+  AiUseBelowSelfHealth: 1
+  AiUseBelowTargetHealth: 1
+  CastVfxKey: 
+  ImpactVfxKey: 
+  CastSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 8783476368622485550
+      type: {class: HealEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Coefficient: 3.2
+        CanCrit: 1
+        LowestHealthOnly: 0

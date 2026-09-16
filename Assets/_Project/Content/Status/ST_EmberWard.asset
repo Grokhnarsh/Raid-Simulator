@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc469c0432b03241959202ba55e796c, type: 3}
+  m_Name: ST_EmberWard
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.StatusEffectDefinition
+  DisplayName: Ember Ward
+  Description: Warded against flame.
+  Icon: {fileID: 0}
+  Tint: {r: 0.36, g: 0.78, b: 0.76, a: 1}
+  IsDebuff: 0
+  Dispellable: 1
+  MaxStacks: 1
+  ReapplyRefreshesDuration: 1
+  TickInterval: 0
+  DamagePerTick: 0
+  TickDamageType: 1
+  HealPerTick: 0
+  MoveSpeedMultiplier: 1
+  HasteMultiplier: 1
+  DamageDealtMultiplier: 1
+  DamageTakenMultiplier: 1
+  ArmorBonus: 0
+  FireResistBonus: 0.35
+  Stuns: 0
+  Roots: 0
+  Silences: 0
+  Untargetable: 0
+  OnExpire: []
+  references:
+    version: 2
+    RefIds: []

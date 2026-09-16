@@ -1,0 +1,23 @@
+{
+    "name": "EmberDepths.PlayTests",
+    "rootNamespace": "EmberDepths.PlayTests",
+    "references": [
+        "EmberDepths.Core",
+        "EmberDepths.Content",
+        "EmberDepths.Gameplay",
+        "UnityEngine.TestRunner"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

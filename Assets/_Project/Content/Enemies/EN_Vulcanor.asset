@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25610d3d52d710744b2799d5504036a8, type: 3}
+  m_Name: EN_Vulcanor
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.EnemyDefinition
+  DisplayName: Vulcanor, the Ember Tyrant
+  Description: The thing the depths were dug to contain.
+  Rank: 2
+  Flags: 5
+  Visuals: {fileID: 11400000, guid: 4030f41d780cdbc41801373fa1c6bee2, type: 2}
+  VisualScale: 1
+  BaseStats:
+    MaxHealth: 260
+    Armor: 60
+    FireResist: 0.9
+    FrostResist: 0
+    ArcaneResist: 0
+    Power: 16
+    CritChance: 0.08
+    CritMultiplier: 2
+    MoveSpeed: 2.4
+    Haste: 1
+    ResourceKind: 0
+    MaxResource: 0
+    ResourceRegen: 0
+    ThreatModifier: 1
+  HealthMultiplier: 1
+  BasicAttack: {fileID: 11400000, guid: fe0bc83cd340a7a4eaff96a3227d6361, type: 2}
+  abilities: []
+  Ai:
+    AggroRadius: 14
+    LeashRadius: 0
+    PreferredRange: 1
+    Kites: 0
+    RepathIntervalTicks: 3
+    WandersWhileIdle: 0
+    HazardAvoidance: 0
+  BossProfile: {fileID: 11400000, guid: 14a77570443a46842977155e6e4ce0de, type: 2}
+  Loot: {fileID: 0}
+  ScoreValue: 10

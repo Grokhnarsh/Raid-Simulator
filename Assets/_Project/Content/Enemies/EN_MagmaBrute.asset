@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25610d3d52d710744b2799d5504036a8, type: 3}
+  m_Name: EN_MagmaBrute
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.EnemyDefinition
+  DisplayName: Magma Brute
+  Description: 
+  Rank: 1
+  Flags: 4
+  Visuals: {fileID: 11400000, guid: ab34cfe49703d7e49a18776142baa413, type: 2}
+  VisualScale: 1.1
+  BaseStats:
+    MaxHealth: 130
+    Armor: 45
+    FireResist: 0.9
+    FrostResist: 0
+    ArcaneResist: 0
+    Power: 12
+    CritChance: 0.05
+    CritMultiplier: 2
+    MoveSpeed: 2.6
+    Haste: 1
+    ResourceKind: 0
+    MaxResource: 0
+    ResourceRegen: 0
+    ThreatModifier: 1
+  HealthMultiplier: 1
+  BasicAttack: {fileID: 11400000, guid: 5efbc8ebf0d7b4744b7fe87e662c494a, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: 66510a5a87fccd24a9485481f04e73b4, type: 2}
+  Ai:
+    AggroRadius: 7
+    LeashRadius: 18
+    PreferredRange: 1
+    Kites: 0
+    RepathIntervalTicks: 4
+    WandersWhileIdle: 1
+    HazardAvoidance: 0.5
+  BossProfile: {fileID: 0}
+  Loot: {fileID: 0}
+  ScoreValue: 10

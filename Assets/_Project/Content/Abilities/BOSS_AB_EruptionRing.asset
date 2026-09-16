@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baad950d78bc16b489ba9d2a6981f74b, type: 3}
+  m_Name: BOSS_AB_EruptionRing
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.AbilityDefinition
+  DisplayName: Eruption Ring
+  Description: The floor splits in a ring. Close is safe.
+  Icon: {fileID: 0}
+  TargetKind: 0
+  AffectsFaction: 0
+  Shape:
+    Kind: 4
+    Radius: 6
+    InnerRadius: 2
+    Length: 1
+    Width: 1
+    Angle: 90
+  Range: 1
+  RequiresLineOfSight: 1
+  ShapeRespectsLineOfSight: 1
+  CastTime: 0.7
+  CastableWhileMoving: 0
+  Cooldown: 16
+  TriggersGlobalCooldown: 1
+  TelegraphLeadTime: 2.2
+  ResourceCost: 0
+  Effects:
+  - rid: 8783476368622485558
+  - rid: 8783476368622485559
+  ThreatMultiplier: 1
+  AiPriority: 3.5
+  AiMinTargets: 1
+  AiUseBelowSelfHealth: 1
+  AiUseBelowTargetHealth: 1
+  CastVfxKey: 
+  ImpactVfxKey: 
+  CastSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 8783476368622485558
+      type: {class: DamageEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Coefficient: 4.5
+        DamageType: 1
+        CanCrit: 1
+        EdgeFalloff: 1
+    - rid: 8783476368622485559
+      type: {class: KnockbackEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Tiles: 1
+        FromCaster: 1

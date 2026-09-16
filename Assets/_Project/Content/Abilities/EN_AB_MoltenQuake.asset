@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baad950d78bc16b489ba9d2a6981f74b, type: 3}
+  m_Name: EN_AB_MoltenQuake
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.AbilityDefinition
+  DisplayName: Molten Quake
+  Description: Shatters the floor in a wide ring.
+  Icon: {fileID: 0}
+  TargetKind: 0
+  AffectsFaction: 0
+  Shape:
+    Kind: 1
+    Radius: 3
+    InnerRadius: 0
+    Length: 1
+    Width: 1
+    Angle: 90
+  Range: 1
+  RequiresLineOfSight: 1
+  ShapeRespectsLineOfSight: 1
+  CastTime: 0.5
+  CastableWhileMoving: 0
+  Cooldown: 12
+  TriggersGlobalCooldown: 1
+  TelegraphLeadTime: 1.8
+  ResourceCost: 0
+  Effects:
+  - rid: 8783476368622485507
+  - rid: 8783476368622485508
+  - rid: 8783476368622485509
+  ThreatMultiplier: 1
+  AiPriority: 3
+  AiMinTargets: 1
+  AiUseBelowSelfHealth: 1
+  AiUseBelowTargetHealth: 1
+  CastVfxKey: 
+  ImpactVfxKey: 
+  CastSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 8783476368622485507
+      type: {class: DamageEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Coefficient: 3
+        DamageType: 1
+        CanCrit: 1
+        EdgeFalloff: 1
+    - rid: 8783476368622485508
+      type: {class: KnockbackEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Tiles: 2
+        FromCaster: 1
+    - rid: 8783476368622485509
+      type: {class: ApplyStatusEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Status: {fileID: 11400000, guid: add9b380058e4c54382ae2542674ecd0, type: 2}
+        Duration: 8
+        Stacks: 1
+        OnSelf: 0

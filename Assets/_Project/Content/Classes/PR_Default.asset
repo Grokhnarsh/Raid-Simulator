@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd135feea531964419234e3cb5247764, type: 3}
+  m_Name: PR_Default
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.PartyRoster
+  Slots:
+  - {fileID: 11400000, guid: 54f8479e363647e4c88e4a96495d06c3, type: 2}
+  - {fileID: 11400000, guid: 924e367c66f85af46a31731115e5b631, type: 2}
+  - {fileID: 11400000, guid: ca2a6022bafbe694081c76773c62a9b3, type: 2}
+  - {fileID: 11400000, guid: d17f6d199c6b56a41aa4fbd9a44375b5, type: 2}
+  - {fileID: 11400000, guid: f3cbc8e5bb8cc6343aea7fe31748d7d0, type: 2}
+  LocalPlayerSlot: 0
+  MemberNames:
+  - Bastion
+  - Vesper
+  - Rook
+  - Nerin
+  - Quill

@@ -1,0 +1,179 @@
+{
+  "_comment": [
+    "Manifest of every PixelLab-generated asset in EmberDepths.",
+    "The UUIDs are permanent: re-running fetch_assets.py reproduces the exact same art.",
+    "Regenerating an asset means a NEW uuid — replace the id here and note it in the changelog",
+    "at the bottom, so a reviewer can tell a re-roll from a fresh asset."
+  ],
+
+  "api_base": "https://api.pixellab.ai/mcp",
+  "cdn_characters": "https://backblaze.pixellab.ai/file/pixellab-characters",
+  "user_id": "c40d3271-67f4-4d17-b7fe-c57154109232",
+
+  "art_root": "Assets/_Project/Art",
+
+  "characters": [
+    {
+      "slug": "warden",
+      "display": "Warden",
+      "id": "f0049ef4-e17d-4ea6-aa38-4037a3287285",
+      "dest": "Actors/Party/Warden",
+      "size": 64,
+      "kind": "party",
+      "prompt": "heavily armored guardian knight in weathered teal and steel plate armor, large tower shield"
+    },
+    {
+      "slug": "cleric",
+      "display": "Emberward Cleric",
+      "id": "24b1cd96-1651-49ab-9bf7-f93ff6141f59",
+      "dest": "Actors/Party/Cleric",
+      "size": 64,
+      "kind": "party",
+      "prompt": "holy cleric healer in bone white and teal robes with a glowing lantern staff"
+    },
+    {
+      "slug": "ranger",
+      "display": "Cinder Ranger",
+      "id": "2e924840-ac5a-412c-bede-6ce71841e3b4",
+      "dest": "Actors/Party/Ranger",
+      "size": 64,
+      "kind": "party",
+      "prompt": "agile ranger archer in dark steel studded leather with teal hood and longbow"
+    },
+    {
+      "slug": "mage",
+      "display": "Tidecaller Mage",
+      "id": "36d31f79-02ae-4d9b-9b37-2de3e85e9ade",
+      "dest": "Actors/Party/Mage",
+      "size": 64,
+      "kind": "party",
+      "prompt": "arcane frost mage in deep teal robes with a glowing cyan crystal staff"
+    },
+    {
+      "slug": "rogue",
+      "display": "Ashblade Rogue",
+      "id": "5dd90cd7-af2a-43de-8caf-df97005ed58b",
+      "dest": "Actors/Party/Rogue",
+      "size": 64,
+      "kind": "party",
+      "prompt": "stealthy rogue assassin in dark steel leathers with teal scarf and twin daggers"
+    },
+
+    {
+      "slug": "ember_imp",
+      "display": "Ember Imp",
+      "id": "d9c9acf0-99b6-4187-9de3-bb0b12853684",
+      "dest": "Actors/Enemies/EmberImp",
+      "size": 64,
+      "kind": "trash",
+      "prompt": "small mischievous fire imp demon with glowing molten orange skin and black horns"
+    },
+    {
+      "slug": "ashborne_zealot",
+      "display": "Ashborne Zealot",
+      "id": "c12e907f-2556-4ef2-8c15-37960184fdc5",
+      "dest": "Actors/Enemies/AshborneZealot",
+      "size": 64,
+      "kind": "trash",
+      "prompt": "burning cultist zealot in charred robes with glowing ember runes"
+    },
+    {
+      "slug": "cinder_hound",
+      "display": "Cinder Hound",
+      "id": "492bddbd-0ad6-4c3d-95ef-b516a196d407",
+      "dest": "Actors/Enemies/CinderHound",
+      "size": 92,
+      "kind": "trash",
+      "body": "quadruped",
+      "prompt": "demonic hellhound with charred black fur and glowing lava cracks along its spine"
+    },
+    {
+      "slug": "magma_brute",
+      "display": "Magma Brute",
+      "id": "2c5cff35-803c-454c-b9e5-f28681038fbd",
+      "dest": "Actors/Enemies/MagmaBrute",
+      "size": 80,
+      "kind": "elite",
+      "prompt": "hulking magma golem brute, cracked basalt body with molten lava in the cracks"
+    },
+    {
+      "slug": "vulcanor",
+      "display": "Vulcanor the Ember Tyrant",
+      "id": "9518efe8-84c3-4f69-ade6-64fdfda415a9",
+      "dest": "Actors/Boss/Vulcanor",
+      "size": 128,
+      "kind": "boss",
+      "prompt": "towering volcanic demon tyrant with obsidian horned crown and a giant flaming greatsword"
+    }
+  ],
+
+  "isometric_tiles": [
+    {
+      "slug": "basalt_cracked",
+      "id": "b87b98a6-0841-4dbb-afb1-8a57c00c1779",
+      "dest": "Tiles",
+      "terrain": "Floor",
+      "prompt": "volcanic basalt floor, warm charcoal and dark brown, glowing orange lava cracks"
+    },
+    {
+      "slug": "lava_pool",
+      "id": "e7b5def7-b71b-47ed-b35f-9b0d6f7cb262",
+      "dest": "Tiles",
+      "terrain": "Lava",
+      "prompt": "bubbling molten lava pool surface"
+    },
+    {
+      "slug": "obsidian_floor",
+      "id": "01847d0d-9a9b-4a74-8d41-61149fd2df9e",
+      "dest": "Tiles",
+      "terrain": "Floor",
+      "prompt": "polished black obsidian floor slab"
+    },
+    {
+      "slug": "ash_ground",
+      "id": "609e1ef1-a464-4e07-98f0-b50e17894f1d",
+      "dest": "Tiles",
+      "terrain": "Floor",
+      "prompt": "volcanic ash and gravel, warm grey brown dust"
+    },
+    {
+      "slug": "basalt_wall",
+      "id": "f7b4bf8d-1346-4e03-9484-e283a72eef6a",
+      "dest": "Tiles",
+      "terrain": "Wall",
+      "prompt": "rough volcanic rock wall, warm charcoal and dark brown"
+    },
+    {
+      "slug": "scorched_brick",
+      "id": "309046b0-96bb-41ca-9259-be9a0d3d70fd",
+      "dest": "Tiles",
+      "terrain": "Floor",
+      "prompt": "soot blackened stone brick floor, warm dark brown masonry"
+    }
+  ],
+
+  "_map_objects_note": [
+    "Item icons. Fetched from the map-object endpoint rather than the tile one.",
+    "Deliberately NOT palette-snapped: the environment palette has no cool ramp,",
+    "and snapping would strip the teal from the Tidecaller and Ashstrider icons."
+  ],
+
+  "map_objects": [
+    { "slug": "icon_weapon",  "id": "9bc7a590-6ad2-408f-84db-28c08824c232", "dest": "Items", "prompt": "fantasy sword item icon" },
+    { "slug": "icon_head",    "id": "6de85bac-cb54-4d1a-ae7b-a1f2d8eaedda", "dest": "Items", "prompt": "fantasy helmet item icon" },
+    { "slug": "icon_chest",   "id": "7a23d0f6-abee-4632-989c-0f7c775eb1ef", "dest": "Items", "prompt": "fantasy breastplate item icon" },
+    { "slug": "icon_hands",   "id": "fc5329a5-0c5a-4b6d-96a0-b17f8ec8dd10", "dest": "Items", "prompt": "fantasy gauntlets item icon" },
+    { "slug": "icon_feet",    "id": "e910fb44-826a-4914-894c-9e7a2b37009a", "dest": "Items", "prompt": "fantasy boots item icon" },
+    { "slug": "icon_trinket", "id": "120403f6-8dee-4c3d-b8af-a2a6c9372e0e", "dest": "Items", "prompt": "fantasy amulet item icon" },
+    { "slug": "icon_shield",  "id": "ab23aef4-051e-4f75-b1a1-89ad193343aa", "dest": "Items", "prompt": "Emberward tower shield icon" },
+    { "slug": "icon_daggers", "id": "c81be4e8-fdbb-4248-86aa-9ffc47910576", "dest": "Items", "prompt": "Ashstrider twin daggers icon" },
+    { "slug": "icon_staff",   "id": "aa85497c-e480-461c-bf2f-eaf05d3900f8", "dest": "Items", "prompt": "Tidecaller crystal staff icon" },
+    { "slug": "icon_embers",  "id": "5db0a806-0982-423a-be75-54b551f69ccc", "dest": "Items", "prompt": "ember crystal currency icon" }
+  ],
+
+  "changelog": [
+    "2026-09-10  initial volcano set: 5 party, 4 trash/elite, 1 boss, 6 isometric tiles",
+    "2026-09-11  added 10 item icons as map objects, for the loot and equipment systems",
+    "2026-09-10  re-rolled 4 terrain tiles (basalt_cracked, ash_ground, scorched_brick, basalt_wall): the first set came back teal-tinted, which fights the party's cool palette and hurts readability on screen. New prompts push warm charcoal/brown."
+  ]
+}

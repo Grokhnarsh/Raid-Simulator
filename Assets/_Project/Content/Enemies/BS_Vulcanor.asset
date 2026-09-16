@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d18d972ca953c46a68fc3065ea2a0f, type: 3}
+  m_Name: BS_Vulcanor
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.BossDefinition
+  Title: the Ember Tyrant
+  IntroLine: The heat has a shape, and it has noticed you.
+  Phases:
+  - Name: Ember Wrath
+    EnterAtHealthFraction: 1
+    BannerText: Vulcanor stirs
+    Abilities:
+    - {fileID: 11400000, guid: 9d7f7b5f7ff2282408aa0012df986019, type: 2}
+    - {fileID: 11400000, guid: d1728648eebfb78418a692afa6c8a39b, type: 2}
+    AbilityInterval: 7
+    DamageMultiplier: 1
+    HasteMultiplier: 1
+    DamageReduction: 0
+    Aura: {fileID: 0}
+    OnEnter: []
+  - Name: Molten Fury
+    EnterAtHealthFraction: 0.65
+    BannerText: The floor begins to split
+    Abilities:
+    - {fileID: 11400000, guid: 9d7f7b5f7ff2282408aa0012df986019, type: 2}
+    - {fileID: 11400000, guid: d1728648eebfb78418a692afa6c8a39b, type: 2}
+    - {fileID: 11400000, guid: 5d5d55f2a17807f4694e5a3aebec376d, type: 2}
+    - {fileID: 11400000, guid: 0f5f4e7153fa4ef48bd286f3746148a7, type: 2}
+    AbilityInterval: 6
+    DamageMultiplier: 1
+    HasteMultiplier: 1.15
+    DamageReduction: 0
+    Aura: {fileID: 11400000, guid: a7985f8bfb0e44a449de1141750f537e, type: 2}
+    OnEnter:
+    - rid: 8783476368622485529
+  - Name: Cataclysm
+    EnterAtHealthFraction: 0.3
+    BannerText: CATACLYSM
+    Abilities:
+    - {fileID: 11400000, guid: 9d7f7b5f7ff2282408aa0012df986019, type: 2}
+    - {fileID: 11400000, guid: d1728648eebfb78418a692afa6c8a39b, type: 2}
+    - {fileID: 11400000, guid: 5d5d55f2a17807f4694e5a3aebec376d, type: 2}
+    - {fileID: 11400000, guid: 1723a22ecf5a79e4c893e73b60a48b95, type: 2}
+    - {fileID: 11400000, guid: 0f5f4e7153fa4ef48bd286f3746148a7, type: 2}
+    AbilityInterval: 4.5
+    DamageMultiplier: 1.3
+    HasteMultiplier: 1.35
+    DamageReduction: 0
+    Aura: {fileID: 11400000, guid: a7985f8bfb0e44a449de1141750f537e, type: 2}
+    OnEnter:
+    - rid: 8783476368622485530
+    - rid: 8783476368622485531
+  EnrageAfterSeconds: 300
+  EnrageStatus: {fileID: 11400000, guid: 461504e68e3477049915aed87ddaca4c, type: 2}
+  Music: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 8783476368622485529
+      type: {class: SpawnHazardEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Hazard: {fileID: 11400000, guid: d200323f522f67a488184e8ea93b15d0, type: 2}
+        Radius: 2
+        Duration: 20
+        AtCaster: 1
+    - rid: 8783476368622485530
+      type: {class: KnockbackEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Tiles: 3
+        FromCaster: 1
+    - rid: 8783476368622485531
+      type: {class: SpawnHazardEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Hazard: {fileID: 11400000, guid: 281a07114e3880042a345a48b04ae8d0, type: 2}
+        Radius: 2
+        Duration: 25
+        AtCaster: 1

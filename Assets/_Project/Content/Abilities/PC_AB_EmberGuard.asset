@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baad950d78bc16b489ba9d2a6981f74b, type: 3}
+  m_Name: PC_AB_EmberGuard
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.AbilityDefinition
+  DisplayName: Ember Guard
+  Description: Braces against the heat.
+  Icon: {fileID: 0}
+  TargetKind: 0
+  AffectsFaction: 1
+  Shape:
+    Kind: 0
+    Radius: 0
+    InnerRadius: 0
+    Length: 1
+    Width: 1
+    Angle: 90
+  Range: 1
+  RequiresLineOfSight: 1
+  ShapeRespectsLineOfSight: 1
+  CastTime: 0
+  CastableWhileMoving: 0
+  Cooldown: 20
+  TriggersGlobalCooldown: 1
+  TelegraphLeadTime: 0
+  ResourceCost: 0
+  Effects:
+  - rid: 8783476368622485552
+  - rid: 8783476368622485553
+  ThreatMultiplier: 1
+  AiPriority: 6
+  AiMinTargets: 1
+  AiUseBelowSelfHealth: 0.6
+  AiUseBelowTargetHealth: 1
+  CastVfxKey: 
+  ImpactVfxKey: 
+  CastSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 8783476368622485552
+      type: {class: ShieldEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Coefficient: 12
+        Duration: 8
+    - rid: 8783476368622485553
+      type: {class: ApplyStatusEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Status: {fileID: 11400000, guid: ab8b70b0776b00e40a10e2d67a160116, type: 2}
+        Duration: 8
+        Stacks: 1
+        OnSelf: 1

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a267c8923397eda4488763ce68de3673, type: 3}
+  m_Name: CL_Cleric
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.ClassDefinition
+  DisplayName: Emberward Cleric
+  Description: 
+  Role: 1
+  AccentColor: {r: 0.85, g: 0.88, b: 0.72, a: 1}
+  Visuals: {fileID: 11400000, guid: 1c24ce042e967cc4aa42a31804dee148, type: 2}
+  BaseStats:
+    MaxHealth: 180
+    Armor: 15
+    FireResist: 0.2
+    FrostResist: 0
+    ArcaneResist: 0
+    Power: 9
+    CritChance: 0.1
+    CritMultiplier: 2
+    MoveSpeed: 3.4
+    Haste: 1
+    ResourceKind: 1
+    MaxResource: 100
+    ResourceRegen: 8
+    ThreatModifier: 0.5
+  BasicAttack: {fileID: 11400000, guid: 5d1c64abd321daf47ab9236e2493839d, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: 41668d49b1e7c1240aa022ba24b43762, type: 2}
+  - {fileID: 11400000, guid: f8cf58756eb650d4c8bee8870fc8665a, type: 2}
+  - {fileID: 11400000, guid: fc14d75f1b1c9164c88916788423d79b, type: 2}
+  - {fileID: 11400000, guid: 6f1ac1d712f60e444a23e9d85ada0fae, type: 2}
+  PreferredRange: 7
+  FollowRadius: 6
+  HazardAvoidance: 0.6

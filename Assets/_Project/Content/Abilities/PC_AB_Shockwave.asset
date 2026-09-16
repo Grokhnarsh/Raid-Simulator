@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baad950d78bc16b489ba9d2a6981f74b, type: 3}
+  m_Name: PC_AB_Shockwave
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.AbilityDefinition
+  DisplayName: Shockwave
+  Description: Slams the ground, scattering everything in front.
+  Icon: {fileID: 0}
+  TargetKind: 2
+  AffectsFaction: 0
+  Shape:
+    Kind: 2
+    Radius: 3
+    InnerRadius: 0
+    Length: 1
+    Width: 1
+    Angle: 100
+  Range: 3
+  RequiresLineOfSight: 1
+  ShapeRespectsLineOfSight: 1
+  CastTime: 0
+  CastableWhileMoving: 0
+  Cooldown: 14
+  TriggersGlobalCooldown: 1
+  TelegraphLeadTime: 0
+  ResourceCost: 0
+  Effects:
+  - rid: 8783476368622485524
+  - rid: 8783476368622485525
+  - rid: 8783476368622485526
+  ThreatMultiplier: 3
+  AiPriority: 1
+  AiMinTargets: 2
+  AiUseBelowSelfHealth: 1
+  AiUseBelowTargetHealth: 1
+  CastVfxKey: 
+  ImpactVfxKey: 
+  CastSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 8783476368622485524
+      type: {class: DamageEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Coefficient: 1.6
+        DamageType: 0
+        CanCrit: 1
+        EdgeFalloff: 1
+    - rid: 8783476368622485525
+      type: {class: KnockbackEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Tiles: 2
+        FromCaster: 1
+    - rid: 8783476368622485526
+      type: {class: ThreatEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Amount: 250

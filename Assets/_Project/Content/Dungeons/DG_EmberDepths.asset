@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438dce5f373bc2c4f94487c2c2d50f6b, type: 3}
+  m_Name: DG_EmberDepths
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.DungeonDefinition
+  DisplayName: The Ember Depths
+  Description: Nine chambers cut into a living volcano. Something at the bottom is awake.
+  Biome: {fileID: 11400000, guid: 77b5e3c812d06304c90690a17db910b3, type: 2}
+  PartySize: 5
+  MapSize: {x: 84, y: 84}
+  MinRooms: 8
+  MaxRooms: 10
+  RoomSizeMin: {x: 9, y: 9}
+  RoomSizeMax: {x: 15, y: 15}
+  RoomSpacing: 4
+  CorridorWidth: 2
+  ExtraConnectionRatio: 0.25
+  EliteRooms: 2
+  HasTreasureRoom: 1
+  BaseRoomBudget: 20
+  DifficultyByDepth:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 2.2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  UseRandomSeed: 1
+  FixedSeed: 1337

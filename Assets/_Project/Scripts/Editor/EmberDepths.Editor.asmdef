@@ -1,0 +1,20 @@
+{
+    "name": "EmberDepths.Editor",
+    "rootNamespace": "EmberDepths.EditorTools",
+    "references": [
+        "EmberDepths.Core",
+        "EmberDepths.Content",
+        "EmberDepths.Gameplay"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

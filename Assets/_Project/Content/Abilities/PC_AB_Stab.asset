@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baad950d78bc16b489ba9d2a6981f74b, type: 3}
+  m_Name: PC_AB_Stab
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.AbilityDefinition
+  DisplayName: Stab
+  Description: A fast thrust between the plates.
+  Icon: {fileID: 0}
+  TargetKind: 2
+  AffectsFaction: 0
+  Shape:
+    Kind: 0
+    Radius: 0
+    InnerRadius: 0
+    Length: 1
+    Width: 1
+    Angle: 90
+  Range: 1
+  RequiresLineOfSight: 1
+  ShapeRespectsLineOfSight: 1
+  CastTime: 0
+  CastableWhileMoving: 0
+  Cooldown: 0.9
+  TriggersGlobalCooldown: 1
+  TelegraphLeadTime: 0
+  ResourceCost: 0
+  Effects:
+  - rid: 8783476368622485551
+  ThreatMultiplier: 1
+  AiPriority: 1
+  AiMinTargets: 1
+  AiUseBelowSelfHealth: 1
+  AiUseBelowTargetHealth: 1
+  CastVfxKey: 
+  ImpactVfxKey: 
+  CastSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 8783476368622485551
+      type: {class: DamageEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Coefficient: 1.4
+        DamageType: 0
+        CanCrit: 1
+        EdgeFalloff: 1

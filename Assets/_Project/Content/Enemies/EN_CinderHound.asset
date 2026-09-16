@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25610d3d52d710744b2799d5504036a8, type: 3}
+  m_Name: EN_CinderHound
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.EnemyDefinition
+  DisplayName: Cinder Hound
+  Description: 
+  Rank: 0
+  Flags: 4
+  Visuals: {fileID: 11400000, guid: 8a4d7edcabd39eb438e9bc55d9563e3c, type: 2}
+  VisualScale: 1
+  BaseStats:
+    MaxHealth: 75
+    Armor: 0
+    FireResist: 0.8
+    FrostResist: 0
+    ArcaneResist: 0
+    Power: 7
+    CritChance: 0.05
+    CritMultiplier: 2
+    MoveSpeed: 5.4
+    Haste: 1
+    ResourceKind: 0
+    MaxResource: 0
+    ResourceRegen: 0
+    ThreatModifier: 1
+  HealthMultiplier: 1
+  BasicAttack: {fileID: 11400000, guid: 2a6a5080703c94e4da4e0fa256f6ff6f, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: 57fc4f05ec56dc2458f46141a344f94c, type: 2}
+  Ai:
+    AggroRadius: 9
+    LeashRadius: 18
+    PreferredRange: 1
+    Kites: 0
+    RepathIntervalTicks: 4
+    WandersWhileIdle: 1
+    HazardAvoidance: 0.5
+  BossProfile: {fileID: 0}
+  Loot: {fileID: 0}
+  ScoreValue: 10

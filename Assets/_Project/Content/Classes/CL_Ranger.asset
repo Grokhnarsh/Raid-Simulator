@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a267c8923397eda4488763ce68de3673, type: 3}
+  m_Name: CL_Ranger
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.ClassDefinition
+  DisplayName: Cinder Ranger
+  Description: 
+  Role: 3
+  AccentColor: {r: 0.45, g: 0.72, b: 0.62, a: 1}
+  Visuals: {fileID: 11400000, guid: e73b83ee162cf864fa6fd05d6511d00f, type: 2}
+  BaseStats:
+    MaxHealth: 195
+    Armor: 25
+    FireResist: 0.1
+    FrostResist: 0
+    ArcaneResist: 0
+    Power: 11
+    CritChance: 0.1
+    CritMultiplier: 2
+    MoveSpeed: 4
+    Haste: 1
+    ResourceKind: 2
+    MaxResource: 100
+    ResourceRegen: 8
+    ThreatModifier: 1
+  BasicAttack: {fileID: 11400000, guid: 9ca52abc55f172a47bb28b7ddcdb0524, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: 7caf1a80ec4121b488ba95d508471f05, type: 2}
+  - {fileID: 11400000, guid: 7183427c28a2aca46b3b96e94a5942c2, type: 2}
+  PreferredRange: 7
+  FollowRadius: 6
+  HazardAvoidance: 0.6

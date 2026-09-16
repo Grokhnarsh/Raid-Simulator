@@ -1,0 +1,17 @@
+{
+    "name": "EmberDepths.Gameplay",
+    "rootNamespace": "EmberDepths.Gameplay",
+    "references": [
+        "EmberDepths.Core",
+        "EmberDepths.Content"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

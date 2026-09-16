@@ -1,0 +1,51 @@
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Asset meta data for folders Unity did not create
+!/[Aa]ssets/**/*.meta
+
+# IDE
+/.vs/
+/.idea/
+/.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Crashlytics / builds
+*.apk
+*.aab
+*.unitypackage
+crashlytics-build.properties
+
+# --- EmberDepths asset pipeline ---------------------------------------------
+# Raw generator output. Regenerate with tools/blender/build_props.py and
+# tools/pixellab/fetch_assets.py; only the committed PNGs under
+# Assets/_Project/Art are the source of truth for the game.
+/tools/_out/
+/tools/blender/_render/
+__pycache__/
+*.pyc
+*.blend1

@@ -1,0 +1,16 @@
+{
+    "name": "EmberDepths.Content",
+    "rootNamespace": "EmberDepths.Content",
+    "references": [
+        "EmberDepths.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

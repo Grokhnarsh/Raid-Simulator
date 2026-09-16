@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baad950d78bc16b489ba9d2a6981f74b, type: 3}
+  m_Name: BOSS_AB_MagmaWave
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.AbilityDefinition
+  DisplayName: Magma Wave
+  Description: A rolling wall of lava.
+  Icon: {fileID: 0}
+  TargetKind: 3
+  AffectsFaction: 0
+  Shape:
+    Kind: 3
+    Radius: 0
+    InnerRadius: 0
+    Length: 9
+    Width: 3
+    Angle: 90
+  Range: 9
+  RequiresLineOfSight: 0
+  ShapeRespectsLineOfSight: 1
+  CastTime: 0.9
+  CastableWhileMoving: 0
+  Cooldown: 13
+  TriggersGlobalCooldown: 1
+  TelegraphLeadTime: 2
+  ResourceCost: 0
+  Effects:
+  - rid: 8783476368622485510
+  - rid: 8783476368622485511
+  ThreatMultiplier: 1
+  AiPriority: 3
+  AiMinTargets: 1
+  AiUseBelowSelfHealth: 1
+  AiUseBelowTargetHealth: 1
+  CastVfxKey: 
+  ImpactVfxKey: 
+  CastSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 8783476368622485510
+      type: {class: DamageEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Coefficient: 3.8
+        DamageType: 1
+        CanCrit: 1
+        EdgeFalloff: 1
+    - rid: 8783476368622485511
+      type: {class: SpawnHazardEffect, ns: EmberDepths.Content, asm: EmberDepths.Content}
+      data:
+        Probability: 1
+        Delay: 0
+        Hazard: {fileID: 11400000, guid: d200323f522f67a488184e8ea93b15d0, type: 2}
+        Radius: 1
+        Duration: 8
+        AtCaster: 0

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25610d3d52d710744b2799d5504036a8, type: 3}
+  m_Name: EN_EmberImp
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.EnemyDefinition
+  DisplayName: Ember Imp
+  Description: 
+  Rank: 0
+  Flags: 4
+  Visuals: {fileID: 11400000, guid: 79a57c147678b8d4bab79ae09cdd5f86, type: 2}
+  VisualScale: 1
+  BaseStats:
+    MaxHealth: 64
+    Armor: 0
+    FireResist: 0.9
+    FrostResist: 0
+    ArcaneResist: 0
+    Power: 6
+    CritChance: 0.05
+    CritMultiplier: 2
+    MoveSpeed: 4.2
+    Haste: 1
+    ResourceKind: 0
+    MaxResource: 0
+    ResourceRegen: 0
+    ThreatModifier: 1
+  HealthMultiplier: 1
+  BasicAttack: {fileID: 11400000, guid: 632463d733630f14f80f544ee40b9f77, type: 2}
+  abilities: []
+  Ai:
+    AggroRadius: 9
+    LeashRadius: 18
+    PreferredRange: 4
+    Kites: 1
+    RepathIntervalTicks: 6
+    WandersWhileIdle: 0
+    HazardAvoidance: 0.8
+  BossProfile: {fileID: 0}
+  Loot: {fileID: 0}
+  ScoreValue: 10

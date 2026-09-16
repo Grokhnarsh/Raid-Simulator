@@ -1,0 +1,126 @@
+{
+  "blender_version": "5.2.1 LTS",
+  "generator_version": "1.0.0",
+  "props": {
+    "bone_pile": {
+      "blocking": false,
+      "directions": [
+        "east",
+        "north",
+        "north-east",
+        "north-west",
+        "south",
+        "south-east",
+        "south-west",
+        "west"
+      ],
+      "footprint_cells": 1.0,
+      "height_cells": 0.3
+    },
+    "brazier": {
+      "blocking": true,
+      "directions": [
+        "east",
+        "north",
+        "north-east",
+        "north-west",
+        "south",
+        "south-east",
+        "south-west",
+        "west"
+      ],
+      "footprint_cells": 1.0,
+      "height_cells": 1.25
+    },
+    "ember_chest": {
+      "blocking": true,
+      "directions": [
+        "east",
+        "north",
+        "north-east",
+        "north-west",
+        "south",
+        "south-east",
+        "south-west",
+        "west"
+      ],
+      "footprint_cells": 1.0,
+      "height_cells": 0.62
+    },
+    "gate_arch": {
+      "blocking": true,
+      "directions": [
+        "east",
+        "north",
+        "north-east",
+        "north-west",
+        "south",
+        "south-east",
+        "south-west",
+        "west"
+      ],
+      "footprint_cells": 2.0,
+      "height_cells": 2.25
+    },
+    "lava_geyser": {
+      "blocking": true,
+      "directions": [
+        "east",
+        "north",
+        "north-east",
+        "north-west",
+        "south",
+        "south-east",
+        "south-west",
+        "west"
+      ],
+      "footprint_cells": 1.6,
+      "height_cells": 0.95
+    },
+    "obsidian_pillar": {
+      "blocking": true,
+      "directions": [
+        "east",
+        "north",
+        "north-east",
+        "north-west",
+        "south",
+        "south-east",
+        "south-west",
+        "west"
+      ],
+      "footprint_cells": 1.0,
+      "height_cells": 2.132
+    },
+    "rune_stone": {
+      "blocking": true,
+      "directions": [
+        "east",
+        "north",
+        "north-east",
+        "north-west",
+        "south",
+        "south-east",
+        "south-west",
+        "west"
+      ],
+      "footprint_cells": 1.0,
+      "height_cells": 1.6
+    },
+    "stalagmite": {
+      "blocking": true,
+      "directions": [
+        "east",
+        "north",
+        "north-east",
+        "north-west",
+        "south",
+        "south-east",
+        "south-west",
+        "west"
+      ],
+      "footprint_cells": 1.0,
+      "height_cells": 0.846
+    }
+  }
+}

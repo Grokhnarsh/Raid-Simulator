@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a267c8923397eda4488763ce68de3673, type: 3}
+  m_Name: CL_Warden
+  m_EditorClassIdentifier: EmberDepths.Content::EmberDepths.Content.ClassDefinition
+  DisplayName: Warden
+  Description: 
+  Role: 0
+  AccentColor: {r: 0.3, g: 0.62, b: 0.68, a: 1}
+  Visuals: {fileID: 11400000, guid: e0de55ebf44de904eb090f6fea987d44, type: 2}
+  BaseStats:
+    MaxHealth: 320
+    Armor: 70
+    FireResist: 0.25
+    FrostResist: 0
+    ArcaneResist: 0
+    Power: 7
+    CritChance: 0.1
+    CritMultiplier: 2
+    MoveSpeed: 3.2
+    Haste: 1
+    ResourceKind: 3
+    MaxResource: 100
+    ResourceRegen: 8
+    ThreatModifier: 4
+  BasicAttack: {fileID: 11400000, guid: 9733ee29b582a1f48bd7335039a5b878, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: e04a818e8f8d09f4fa794f44a6763804, type: 2}
+  - {fileID: 11400000, guid: 9e167a761e0dd8d488bbd244cb41eef6, type: 2}
+  - {fileID: 11400000, guid: ab44669cfb526664192db90d25c37d4b, type: 2}
+  PreferredRange: 1
+  FollowRadius: 6
+  HazardAvoidance: 0.6
