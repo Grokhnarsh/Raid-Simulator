@@ -18,7 +18,7 @@ MonoBehaviour:
   _resourceKind: 0
   _baseStats:
   - Stat: 1
-    Value: 20000
+    Value: 1500
   - Stat: 4
     Value: 0
   - Stat: 7
@@ -26,6 +26,13 @@ MonoBehaviour:
   - Stat: 8
     Value: 500
   _statsPerLevel: []
+  _autoAttack:
+    SwingInterval: 0
+    BaseDamage: 0
+    PowerCoefficient: 0
+    DamageType: 0
+    Range: 0
+    Label: None
   _preferredCombatRange: 3
   _turnRateDegrees: 0
   _radius: 0.7

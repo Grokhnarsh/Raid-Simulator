@@ -7,9 +7,10 @@ The player controls one character inside the group while the rest are run by AI.
 asks for is the set of decisions a raid leader makes: who to bring, where to stand, when to spend
 cooldowns, what to focus, interrupt or avoid.
 
-> **Status: Phase 1 complete.** The simulation kernel, bootstrap, camera, a player character,
-> movement and targeting are in place, with 139 passing unit tests. Combat, abilities, AI, threat,
-> the raid zone, the boss, UI and loot are scheduled — see [`Docs/ROADMAP.md`](Docs/ROADMAP.md).
+> **Status: Phase 2 complete.** The simulation kernel, bootstrap, camera, a player character,
+> movement, targeting, and now the combat core — damage, healing, death and a data-driven basic
+> attack — are in place, with 223 passing unit tests. Abilities, AI, threat, the raid zone, the
+> boss, UI and loot are scheduled — see [`Docs/ROADMAP.md`](Docs/ROADMAP.md).
 
 ---
 
@@ -26,7 +27,7 @@ The simulation kernel has no engine dependency, so it compiles and tests with th
 
 ```bash
 dotnet build Tools/CoreBuild/RaidSim.Core.csproj          # compile the kernel
-dotnet test  Tools/CoreBuild/RaidSim.Core.Tests.csproj    # run 139 unit tests
+dotnet test  Tools/CoreBuild/RaidSim.Core.Tests.csproj    # run 223 unit tests
 dotnet build Tools/UnityStubs/RaidSim.UnityTypeCheck.csproj   # type-check engine-facing code
 python3 Tools/Unity/verify_references.py                  # check every asset reference resolves
 ```

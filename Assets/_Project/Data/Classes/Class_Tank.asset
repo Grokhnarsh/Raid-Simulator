@@ -44,6 +44,13 @@ MonoBehaviour:
     Value: 1.5
   - Stat: 7
     Value: 9
+  _autoAttack:
+    SwingInterval: 2.4
+    BaseDamage: 45
+    PowerCoefficient: 0.6
+    DamageType: 0
+    Range: 3
+    Label: Weapon Swing
   _preferredCombatRange: 3
   _turnRateDegrees: 720
   _radius: 0.55

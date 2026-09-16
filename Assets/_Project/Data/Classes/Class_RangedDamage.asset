@@ -44,6 +44,13 @@ MonoBehaviour:
     Value: 22
   - Stat: 6
     Value: 3.8
+  _autoAttack:
+    SwingInterval: 2.4
+    BaseDamage: 40
+    PowerCoefficient: 0.6
+    DamageType: 1
+    Range: 28
+    Label: Arcane Bolt
   _preferredCombatRange: 28
   _turnRateDegrees: 540
   _radius: 0.45

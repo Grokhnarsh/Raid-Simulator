@@ -67,7 +67,7 @@ Assets/_Project/
     Core/        RaidSim.Core — the simulation kernel. No UnityEngine, ever.
     Characters/  Data assets and the CombatActor bridge
     CameraRig/   The 2.5D camera
-    Combat/      Targeting now; damage, threat and effects as they land
+    Combat/      Targeting and combat authoring data; threat and effects as they land
     Game/        Bootstrap, input, player driver, engine interop
     DebugTools/  Development-only tooling
     Editor/      Editor menus and validation
@@ -139,6 +139,8 @@ Unity may reserialise the hand-written `.meta` files on first import to normalis
 That is expected and harmless: the GUIDs are preserved, so no reference breaks.
 
 ### Controls
+
+Select a practice target and walk into range; the basic attack swings on its own.
 
 | Action | Keyboard / mouse | Gamepad |
 | --- | --- | --- |

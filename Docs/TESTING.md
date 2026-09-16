@@ -39,7 +39,7 @@ tests.
 
 ## 3. Current coverage
 
-**139 tests, all passing.**
+**223 tests, all passing** (about 340 ms, no engine).
 
 | Area | Tests | What is asserted |
 | --- | --- | --- |
@@ -55,6 +55,13 @@ tests.
 | `KinematicLocomotor` | 17 | speed, normalisation, no overshoot, stopping distance, turn rate, facing independent of travel |
 | `EntityRegistry` | 12 | registration, idempotence, faction buckets, hostile and ally queries |
 | `SimulationContext` | 10 | tick order independent of registration order, pause, fault isolation, reset |
+| `DamagePipeline` | 26 | power scaling per damage type, ability multipliers, criticals and their interaction with mitigation, each mitigation stat against each type, diminishing returns, the authored ceiling, level scaling, outgoing and incoming modifiers, immunity, overkill, corpses, sourceless damage, preview purity |
+| `HealingPipeline` | 11 | spell-power-only scaling, criticals, overhealing, healing never resurrects |
+| `CombatSystem` | 14 | both event perspectives, death reported exactly once, chain-reaction deaths, fully mitigated hits still reported, debug kills, encounter reset |
+| `AutoAttackSystem` | 16 | immediate swing on engage, interval, footprint-relative range, hostility, target-swap abuse, pause-not-reset, registration lifecycle, killing a target over time |
+| `DeterministicRandomSource` | 9 | same seed reproduces the sequence, seed 0 is not a fixed point, range, certainty at the extremes, distribution |
+| `CombatTuning` | 4 | rejects a non-positive mitigation constant, ceiling below total immunity, level scaling |
+| `Mitigation` | 4 | zero and negative ratings, true damage, the 50% reference point |
 
 ---
 
@@ -98,8 +105,8 @@ formula would break on every refactor and teach nothing.
 
 | Phase | Unit tests | Integration tests |
 | --- | --- | --- |
-| 2 Combat | mitigation per damage type, criticals, shield absorption, overkill, healing and overhealing, death | killing a practice target end to end |
-| 3 Abilities | cost validation, range validation, cast completion, cooldown expiry, global and shared cooldowns, charges, cooldown reduction | cast interrupted by movement; ability resolving on a live target |
+| ~~2 Combat~~ ✅ | done — see the table above. Shield absorption moved to Phase 3 with the effects that produce shields | pending: killing a practice target in the editor |
+| 3 Abilities | cost validation, range validation, cast completion, cooldown expiry, global and shared cooldowns, charges, cooldown reduction, **shield absorption in the damage pipeline** | cast interrupted by movement; ability resolving on a live target |
 | 4 Party | roster construction at sizes 5, 10, 20, 40; role queries | party spawns and frames populate from data |
 | 5 AI | every target rule; healer priority; melee reach against a large target; ranged minimum range; interrupt only on interruptible casts; danger-zone avoidance wins | AI group clears a practice encounter unaided |
 | 6 Threat | threat ordering, threat multipliers, taunt override and expiry, threat dropped on death | tank holds against the group's damage |
@@ -136,7 +143,7 @@ The Unity API stubs in `Tools/UnityStubs/` are hand-written. They prove the proj
 internally consistent and compiles; they do not prove that every Unity call matches the real engine,
 because a stub is only as accurate as the signature written into it.
 
-The stubs have already caught two real defects — a missing `using` for extension methods, and an
+The stubs have already caught real defects — a missing `using` for extension methods, and an
 incorrect assumption about `UnityEngine.SerializableAttribute` — so they earn their place. But
 **Unity's compile and the Play Mode test run remain authoritative**, and no phase is complete until
 the project has been opened and played.

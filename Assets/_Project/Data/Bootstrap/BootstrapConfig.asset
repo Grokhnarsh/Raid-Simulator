@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BootstrapConfig
   m_EditorClassIdentifier: 
   _cameraSettings: {fileID: 11400000, guid: 70df020a6d4d10c3df2e52e70ce72f48, type: 2}
+  _combatTuning: {fileID: 11400000, guid: 58fe67489ee73258088989226d3edc57, type: 2}
   _controls: {fileID: 0}
   _playerSpawn:
     Character: {fileID: 11400000, guid: 9983c17078fee13823e99a57db2eb835, type: 2}

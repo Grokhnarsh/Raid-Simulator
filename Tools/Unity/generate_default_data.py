@@ -41,6 +41,7 @@ STAT = {
     "CastSpeed": 15,
 }
 PROJECTION = {"Orthographic": 0, "Perspective": 1}
+DAMAGE_TYPE = {"Physical": 0, "Magic": 1, "True": 2}
 
 # Script GUIDs, derived from where each class lives.
 SCRIPT_GUIDS = {
@@ -48,6 +49,7 @@ SCRIPT_GUIDS = {
     "CharacterDefinition": guid_for(f"{SCRIPTS}/Characters/Data/CharacterDefinition.cs"),
     "CameraRigSettings": guid_for(f"{SCRIPTS}/CameraRig/Data/CameraRigSettings.cs"),
     "BootstrapConfig": guid_for(f"{SCRIPTS}/Game/Bootstrap/BootstrapConfig.cs"),
+    "CombatTuningAsset": guid_for(f"{SCRIPTS}/Combat/Data/CombatTuningAsset.cs"),
 }
 
 HEADER = """%YAML 1.1
@@ -129,6 +131,8 @@ CLASSES = {
         },
         growth={"MaxHealth": 60, "AttackPower": 1.5, "Armor": 9},
         preferred_range=3, turn_rate=720, radius=0.55,
+        auto_attack=dict(interval=2.4, damage=45, coefficient=0.6, type="Physical",
+                         range=3, label="Weapon Swing"),
     ),
     "Class_Healer": dict(
         display="Lightweaver", role="Healer", resource="Mana",
@@ -141,6 +145,8 @@ CLASSES = {
         },
         growth={"MaxHealth": 32, "MaxResource": 26, "SpellPower": 3.4},
         preferred_range=24, turn_rate=540, radius=0.45,
+        auto_attack=dict(interval=2.8, damage=25, coefficient=0.35, type="Magic",
+                         range=25, label="Radiant Bolt"),
     ),
     "Class_MeleeDamage": dict(
         display="Bladedancer", role="MeleeDamage", resource="Energy",
@@ -153,6 +159,8 @@ CLASSES = {
         },
         growth={"MaxHealth": 36, "AttackPower": 3.6, "Armor": 4},
         preferred_range=3, turn_rate=720, radius=0.45,
+        auto_attack=dict(interval=1.8, damage=55, coefficient=0.65, type="Physical",
+                         range=3, label="Weapon Strike"),
     ),
     "Class_RangedDamage": dict(
         display="Stormcaller", role="RangedDamage", resource="Mana",
@@ -165,18 +173,36 @@ CLASSES = {
         },
         growth={"MaxHealth": 30, "MaxResource": 22, "SpellPower": 3.8},
         preferred_range=28, turn_rate=540, radius=0.45,
+        auto_attack=dict(interval=2.4, damage=40, coefficient=0.6, type="Magic",
+                         range=28, label="Arcane Bolt"),
     ),
     "Class_PracticeTarget": dict(
         display="Practice Target", role="None", resource="None",
         description="A stationary target used to verify targeting, range and, from Phase 2, the "
                     "damage pipeline. Not raid content.",
         base={
-            "MaxHealth": 20000, "MovementSpeed": 0, "Armor": 500, "Resistance": 500,
+            "MaxHealth": 1500, "MovementSpeed": 0, "Armor": 500, "Resistance": 500,
         },
         growth={},
         preferred_range=3, turn_rate=0, radius=0.7,
+        auto_attack=dict(interval=0, damage=0, coefficient=0, type="Physical",
+                         range=0, label="None"),
     ),
 }
+
+
+def auto_attack_block(spec: dict) -> str:
+    """Renders the serialized AutoAttackData struct for a class."""
+    lines = [
+        "  _autoAttack:",
+        "    SwingInterval: {0}".format(num(spec["interval"])),
+        "    BaseDamage: {0}".format(num(spec["damage"])),
+        "    PowerCoefficient: {0}".format(num(spec["coefficient"])),
+        "    DamageType: {0}".format(DAMAGE_TYPE[spec["type"]]),
+        "    Range: {0}".format(num(spec["range"])),
+        "    Label: {0}".format(spec["label"]),
+    ]
+    return "\n".join(lines) + "\n"
 
 
 def write_classes(force: bool) -> list[str]:
@@ -190,6 +216,7 @@ def write_classes(force: bool) -> list[str]:
         body += f"  _resourceKind: {RESOURCE[spec['resource']]}\n"
         body += stat_list("_baseStats", spec["base"])
         body += stat_list("_statsPerLevel", spec["growth"])
+        body += auto_attack_block(spec["auto_attack"])
         body += f"  _preferredCombatRange: {num(spec['preferred_range'])}\n"
         body += f"  _turnRateDegrees: {num(spec['turn_rate'])}\n"
         body += f"  _radius: {num(spec['radius'])}\n"
@@ -251,6 +278,22 @@ def write_camera(force: bool) -> list[str]:
     return [relative] if write(relative, body, force) else []
 
 
+# --- Combat ----------------------------------------------------------------
+def write_combat_tuning(force: bool) -> list[str]:
+    """Mitigation constants and the simulation's random seed.
+
+    At 55 per level, a level-60 attacker needs the target to hold 3300 armour to halve the hit.
+    """
+    relative = f"{DATA}/Bootstrap/CombatTuning.asset"
+    body = HEADER.format(script_guid=SCRIPT_GUIDS["CombatTuningAsset"], name="CombatTuning")
+    body += "  _armorConstantPerLevel: 55\n"
+    body += "  _resistanceConstantPerLevel: 55\n"
+    body += "  _maximumMitigation: 0.75\n"
+    body += "  _randomSeed: 1337\n"
+    body += "  _useFixedSeed: 1\n"
+    return [relative] if write(relative, body, force) else []
+
+
 # --- Bootstrap -------------------------------------------------------------
 # The player plus three practice targets. Group members and raid content join this list in Phase 4
 # and Phase 7 respectively; the spawn mechanism does not change.
@@ -278,6 +321,7 @@ def write_bootstrap(force: bool) -> list[str]:
     relative = f"{DATA}/Bootstrap/BootstrapConfig.asset"
     body = HEADER.format(script_guid=SCRIPT_GUIDS["BootstrapConfig"], name="BootstrapConfig")
     body += "  _cameraSettings: {0}\n".format(asset_ref(DATA + "/Bootstrap/CameraRigSettings.asset"))
+    body += "  _combatTuning: {0}\n".format(asset_ref(DATA + "/Bootstrap/CombatTuning.asset"))
     # The controls asset is imported by the Input System's scripted importer, whose sub-object id
     # is assigned by the editor. It is wired up by "Raid Simulator/Repair Data References" on
     # first open rather than guessed here; see CLAUDE.md, "First time you open the project".
@@ -308,6 +352,7 @@ def main() -> int:
     written += write_classes(args.force)
     written += write_characters(args.force)
     written += write_camera(args.force)
+    written += write_combat_tuning(args.force)
     written += write_bootstrap(args.force)
 
     for relative in written:

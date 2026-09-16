@@ -16,7 +16,7 @@ namespace RaidSim.Core.Targeting
     /// listener has to defend against a stale reference and no ability can fire at a corpse that
     /// was despawned three ticks ago.</para>
     /// </remarks>
-    public sealed class TargetSelection : IDisposable
+    public sealed class TargetSelection : ITargetProvider, IDisposable
     {
         private readonly EntityRegistry _registry;
         private readonly IEventBus _eventBus;
@@ -35,6 +35,9 @@ namespace RaidSim.Core.Targeting
 
         /// <summary>The current target, or null.</summary>
         public ISimEntity Target => _target;
+
+        /// <inheritdoc />
+        ISimEntity ITargetProvider.CurrentTarget => _target;
 
         public EntityId TargetId => _target?.Id ?? EntityId.None;
 

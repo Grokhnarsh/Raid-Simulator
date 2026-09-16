@@ -39,8 +39,14 @@ namespace RaidSim.DebugTools.Runtime
         [SerializeField]
         private int _fontSize = 13;
 
-        private readonly StringBuilder _builder = new StringBuilder(512);
+        [Tooltip("How many recent combat lines the overlay keeps.")]
+        [Min(1)]
+        [SerializeField]
+        private int _combatFeedLines = 8;
+
+        private readonly StringBuilder _builder = new StringBuilder(768);
         private GUIStyle _style;
+        private CombatEventFeed _combatFeed;
 
         private void Awake()
         {
@@ -49,6 +55,18 @@ namespace RaidSim.DebugTools.Runtime
                 _bootstrap = GetComponent<GameBootstrap>();
             }
         }
+
+        private void Start()
+        {
+            // Started rather than awoken, so bootstrap has finished building the simulation.
+            SimulationContext context = _bootstrap != null ? _bootstrap.Context : null;
+            if (context != null)
+            {
+                _combatFeed = new CombatEventFeed(context.Events, context.Entities, _combatFeedLines);
+            }
+        }
+
+        private void OnDestroy() => _combatFeed?.Dispose();
 
         /// <summary>Shows or hides the overlay. Bound to a debug key by the debug console later.</summary>
         public void SetVisible(bool visible) => _visible = visible;
@@ -67,7 +85,7 @@ namespace RaidSim.DebugTools.Runtime
                 wordWrap = false,
             };
 
-            GUI.Label(new Rect(12f, 12f, 520f, 260f), BuildReadout(_bootstrap.Context), _style);
+            GUI.Label(new Rect(12f, 12f, 640f, 420f), BuildReadout(_bootstrap.Context), _style);
         }
 
         private string BuildReadout(SimulationContext context)
@@ -84,7 +102,22 @@ namespace RaidSim.DebugTools.Runtime
                 .AppendLine();
 
             AppendActor(_bootstrap.PlayerActor);
+            AppendCombatFeed();
             return _builder.ToString();
+        }
+
+        private void AppendCombatFeed()
+        {
+            if (_combatFeed == null || _combatFeed.Lines.Count == 0)
+            {
+                return;
+            }
+
+            _builder.AppendLine().AppendLine("combat:");
+            foreach (string line in _combatFeed.Lines)
+            {
+                _builder.Append("  ").AppendLine(line);
+            }
         }
 
         private void AppendActor(CombatActor actor)

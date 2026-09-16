@@ -67,5 +67,12 @@ namespace RaidSim.Tests.Core
             Health.Empty();
             return this;
         }
+
+        /// <summary>Sets a base stat. Fluent so a test can describe an entity in one expression.</summary>
+        public TestEntity WithStat(StatType stat, float value)
+        {
+            Stats.SetBase(stat, value);
+            return this;
+        }
     }
 }

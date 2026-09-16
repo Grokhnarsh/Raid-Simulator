@@ -1,3 +1,5 @@
+using RaidSim.Combat.Data;
+using RaidSim.Core.Combat;
 using RaidSim.Core.Common;
 using RaidSim.Core.Stats;
 using RaidSim.Core.Vitals;
@@ -53,6 +55,19 @@ namespace RaidSim.Characters.Data
         [SerializeField]
         private StatEntry[] _statsPerLevel = new StatEntry[0];
 
+        [Header("Basic attack")]
+        [Tooltip("This class's auto-attack. A swing interval of zero means it has none.")]
+        [SerializeField]
+        private AutoAttackData _autoAttack = new AutoAttackData
+        {
+            SwingInterval = 2f,
+            BaseDamage = 40f,
+            PowerCoefficient = 0.5f,
+            DamageType = DamageType.Physical,
+            Range = 3f,
+            Label = "Attack",
+        };
+
         [Header("Positioning")]
         [Tooltip("Distance in metres at which this class prefers to fight. Melee classes use a small value.")]
         [Min(0f)]
@@ -82,6 +97,9 @@ namespace RaidSim.Characters.Data
         public float TurnRateDegrees => _turnRateDegrees;
 
         public float Radius => _radius;
+
+        /// <summary>The class's basic attack, as the simulation sees it.</summary>
+        public AutoAttackProfile AutoAttack => _autoAttack.ToRuntime();
 
         /// <summary>
         /// Builds the base stats for <paramref name="level"/>: level-one stats plus growth for each

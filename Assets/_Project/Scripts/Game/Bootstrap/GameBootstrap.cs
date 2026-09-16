@@ -1,6 +1,9 @@
 using RaidSim.CameraRig.Runtime;
 using RaidSim.Characters.Runtime;
 using RaidSim.Combat.Targeting;
+using RaidSim.Combat.Data;
+using RaidSim.Core.Combat;
+using RaidSim.Core.Randomness;
 using RaidSim.Core.Diagnostics;
 using RaidSim.Core.GameFlow;
 using RaidSim.Core.Simulation;
@@ -46,6 +49,8 @@ namespace RaidSim.Game.Bootstrap
         private LogSeverity _minimumLogSeverity = LogSeverity.Info;
 
         private SimulationContext _context;
+        private CombatSystem _combat;
+        private AutoAttackSystem _autoAttack;
         private RaidCameraRig _cameraRig;
         private PlayerController _playerController;
         private PlayerTargetingController _targetingController;
@@ -55,6 +60,9 @@ namespace RaidSim.Game.Bootstrap
 
         /// <summary>The running simulation, or null before bootstrap completes.</summary>
         public SimulationContext Context => _context;
+
+        /// <summary>The combat system, or null before bootstrap completes.</summary>
+        public CombatSystem Combat => _combat;
 
         /// <summary>The camera rig built during bootstrap.</summary>
         public RaidCameraRig CameraRig => _cameraRig;
@@ -85,6 +93,7 @@ namespace RaidSim.Game.Bootstrap
             _sceneRoot = new GameObject("~Encounter").transform;
             _sceneRoot.SetParent(transform, worldPositionStays: false);
 
+            BuildCombat();
             BuildArena();
             BuildCamera();
             BuildPlayerRig();
@@ -123,7 +132,32 @@ namespace RaidSim.Game.Bootstrap
             _context.Tick(Time.deltaTime);
         }
 
-        private void OnDestroy() => _context?.Dispose();
+        private void OnDestroy()
+        {
+            _autoAttack?.Dispose();
+            _combat?.Dispose();
+            _context?.Dispose();
+        }
+
+        /// <summary>
+        /// Builds the combat systems. The combat system itself is event-driven and is not ticked;
+        /// only auto-attack needs a slice of each tick, so only it is registered with the context.
+        /// </summary>
+        private void BuildCombat()
+        {
+            CombatTuningAsset tuning = _config.CombatTuning;
+
+            // A fixed seed makes an encounter replayable, which is what the batch simulator in
+            // Phase 11 needs in order to compare two runs at all.
+            int seed = tuning.UseFixedSeed ? tuning.RandomSeed : System.Environment.TickCount;
+            var random = new DeterministicRandomSource(seed);
+
+            _combat = new CombatSystem(_context.Events, tuning.ToRuntime(), random);
+            _autoAttack = new AutoAttackSystem(_combat, _context.Events);
+            _context.AddSystem(_autoAttack);
+
+            _context.Log.Info(LogChannel.Combat, $"Combat ready (random seed {seed}).");
+        }
 
         private void BuildArena()
         {
@@ -215,7 +249,8 @@ namespace RaidSim.Game.Bootstrap
                 _context,
                 _config.DefaultActorPrefab,
                 _config.PlaceholderActorHeight,
-                _sceneRoot);
+                _sceneRoot,
+                _autoAttack);
 
             CombatActor player = spawner.Spawn(_config.PlayerSpawn);
             if (player == null)

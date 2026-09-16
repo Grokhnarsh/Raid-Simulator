@@ -1,4 +1,5 @@
 using RaidSim.CameraRig.Data;
+using RaidSim.Combat.Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,6 +25,11 @@ namespace RaidSim.Game.Bootstrap
         [Tooltip("Configuration for the 2.5D raid camera. Required.")]
         [SerializeField]
         private CameraRigSettings _cameraSettings;
+
+        [Header("Combat")]
+        [Tooltip("Balance numbers for the damage and healing pipelines. Required.")]
+        [SerializeField]
+        private CombatTuningAsset _combatTuning;
 
         [Header("Input")]
         [Tooltip("Input System action asset containing the gameplay map. Required for player control.")]
@@ -64,6 +70,8 @@ namespace RaidSim.Game.Bootstrap
 
         public CameraRigSettings CameraSettings => _cameraSettings;
 
+        public CombatTuningAsset CombatTuning => _combatTuning;
+
         public InputActionAsset Controls => _controls;
 
         public SpawnEntry PlayerSpawn => _playerSpawn;
@@ -90,6 +98,17 @@ namespace RaidSim.Game.Bootstrap
             if (_cameraSettings == null)
             {
                 return $"'{name}' has no camera settings assigned.";
+            }
+
+            if (_combatTuning == null)
+            {
+                return $"'{name}' has no combat tuning assigned.";
+            }
+
+            string tuningProblem = _combatTuning.Validate();
+            if (tuningProblem != null)
+            {
+                return tuningProblem;
             }
 
             if (!_playerSpawn.IsValid)

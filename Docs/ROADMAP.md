@@ -3,7 +3,7 @@
 Phases run in order. Each ends with a compiling project, passing tests, and updated documentation.
 Work belonging to a later phase does not start early — see [`../CLAUDE.md`](../CLAUDE.md), section 6.
 
-**Current position: Phase 1 complete. Phase 2 is next.**
+**Current position: Phase 2 complete. Phase 3 is next.**
 
 ---
 
@@ -33,21 +33,39 @@ movement, and first targeting.
 
 ---
 
-## Phase 2 — Combat core
+## Phase 2 — Combat core ✅
 
 Health, damage, death, basic attack.
 
-* `CombatSystem`, `DamagePipeline`, `HealingPipeline`.
-* `DamageType` (physical / magic / true) and mitigation from armour and resistance.
-* Critical strikes from `CriticalChance` and `CriticalMultiplier`.
-* Events: `AttackStartedEvent`, `DamageDealtEvent`, `DamageTakenEvent`, `HealAppliedEvent`,
-  `EntityDiedEvent`.
-* Overkill and overhealing reported from what the pools actually applied.
-* Auto-attack driven from data, not hard-coded.
-* `COMBAT_SYSTEM.md` updated from specification to description.
+**Delivered**
 
-**Done when:** the player can kill a practice target, and the damage formula is covered by unit
-tests including mitigation, criticals, overkill and death.
+* `CombatSystem` — the single entry point for damage and healing, and the only thing that reports
+  death. It reports each death exactly once, and `Kill` routes debug kills through the same funnel.
+* `DamagePipeline` and `HealingPipeline` as ordered steps rather than one expression, so later
+  additions insert at a known point. `Calculate` previews without touching anything.
+* `DamageType`: physical scales from attack power and is reduced by armour, magic from spell power
+  reduced by resistance, true damage does neither — so a mechanic built on it cannot be out-geared.
+* `Mitigation` on a `rating / (rating + K)` curve with diminishing returns and level scaling; the
+  curve's shape in code, its constants in `CombatTuningAsset`.
+* Critical strikes from `CriticalChance` and `CriticalMultiplier`, suppressible per request.
+* `IRandomSource` with a seeded xorshift implementation, so an encounter replays identically —
+  the prerequisite for Phase 11's comparisons.
+* Events: `AttackStartedEvent`, `DamageDealtEvent`, `DamageTakenEvent`, `HealAppliedEvent`,
+  `EntityDiedEvent`. Damage raises two perspectives because the interested parties differ.
+* Overkill and overhealing taken from what the pools actually applied, never recomputed.
+* `AutoAttackSystem` driving every attacker from one loop, with profiles authored on
+  `ClassDefinition`. The timer pauses rather than resets on losing a target, so swapping cannot be
+  used to swing faster.
+* `CombatEventFeed` in `DebugTools` rendering combat into the development overlay — the first proof
+  that a listener can be added without touching combat code.
+* 84 new unit tests (223 total).
+
+**Deliberately not included:** absorption shields, which arrive in Phase 3 with the effects that
+produce them. A permanently-zero `Absorbed` field would mislead the combat log.
+
+**Verified:** at the authored tuning, a level-60 tank kills a practice target in about 23 seconds;
+melee in 8, ranged in 11, healer in 25. Role ordering is correct and the fight is long enough to
+observe. **Not yet verified:** the encounter running in the Unity editor.
 
 ---
 

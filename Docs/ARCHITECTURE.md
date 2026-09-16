@@ -40,10 +40,11 @@ enforced three ways:
    raid management. That means running an encounter faster than real time, many times, to compare
    compositions and cooldown plans. A headless kernel makes that a loop; a kernel wired into
    `MonoBehaviour.Update` makes it impossible.
-2. **Tests are fast and real.** 139 unit tests currently run in about 100 ms with no editor. They
+2. **Tests are fast and real.** 223 unit tests currently run in about 340 ms with no editor. They
    test the real code, not a mock of it.
-3. **Determinism is reachable.** Nothing in the kernel reads frame time, physics or random state it
-   was not given, so replays and reproducible encounter statistics stay achievable.
+3. **Determinism is real.** Nothing in the kernel reads frame time, physics or ambient random
+   state: time comes from `ISimulationClock` and every roll from a seeded `IRandomSource`, so an
+   encounter replays identically and two runs can be compared.
 4. **Rendering decisions stay cheap.** Swapping render pipeline, art style or even engine touches
    the presentation layer only.
 
@@ -226,7 +227,7 @@ nothing. The decision point is scheduled for Phase 7, before art volume exists â
 | Check | Command | Covers |
 | --- | --- | --- |
 | Kernel compile | `dotnet build Tools/CoreBuild/RaidSim.Core.csproj` | warnings-as-errors; enforces no engine reference |
-| Kernel tests | `dotnet test Tools/CoreBuild/RaidSim.Core.Tests.csproj` | the same sources Unity's Test Runner uses |
+| Kernel tests | `dotnet test Tools/CoreBuild/RaidSim.Core.Tests.csproj` | 223 tests; the same sources Unity's Test Runner uses |
 | Engine-facing type check | `dotnet build Tools/UnityStubs/RaidSim.UnityTypeCheck.csproj` | the project's own C# against Unity API stubs |
 | Asset references | `python3 Tools/Unity/verify_references.py` | every GUID reference resolves |
 | Meta coverage | `python3 Tools/Unity/generate_meta.py --check` | no asset lacks a `.meta` |
@@ -246,8 +247,9 @@ remains authoritative. See `Tools/UnityStubs/README.md`.
 | `TargetQuery`, `TargetFilter`, `TargetSelection` | built, tested | 1 |
 | `ILocomotor` + kinematic and CharacterController implementations | built, tested | 1 |
 | `GameBootstrap`, `RaidCameraRig`, `PlayerController` | built | 1 |
-| `DevelopmentOverlay` | built, minimal | 1 |
-| `CombatSystem`, damage pipeline | scheduled | 2 |
+| `DevelopmentOverlay`, `CombatEventFeed` | built | 1â€“2 |
+| `CombatSystem`, `DamagePipeline`, `HealingPipeline`, `Mitigation` | built, tested | 2 |
+| `AutoAttackSystem`, `IRandomSource` | built, tested | 2 |
 | `AbilitySystem`, `CooldownSystem` | scheduled | 3 |
 | Party composition, raid frames | scheduled | 4 |
 | `AISystem` (enemy and raid) | scheduled | 5 |

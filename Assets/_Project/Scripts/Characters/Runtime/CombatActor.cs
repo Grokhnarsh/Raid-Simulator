@@ -1,4 +1,5 @@
 using RaidSim.Characters.Data;
+using RaidSim.Core.Combat;
 using RaidSim.Core.Common;
 using RaidSim.Core.Diagnostics;
 using RaidSim.Core.Entities;
@@ -101,6 +102,12 @@ namespace RaidSim.Characters.Runtime
         /// <summary>Distance in metres at which this actor prefers to fight.</summary>
         public float PreferredCombatRange { get; private set; }
 
+        /// <summary>
+        /// This actor's basic attack, taken from its class. A profile that is not enabled means the
+        /// actor never swings — a practice target, or a purely supportive unit.
+        /// </summary>
+        public AutoAttackProfile AutoAttack { get; private set; }
+
         public bool IsInitialised => _context != null;
 
         /// <summary>
@@ -138,6 +145,7 @@ namespace RaidSim.Characters.Runtime
             Role = classDefinition.Role;
             Radius = classDefinition.Radius;
             PreferredCombatRange = classDefinition.PreferredCombatRange;
+            AutoAttack = classDefinition.AutoAttack;
 
             Stats = new StatBlock(_definition.BuildBaseStats());
             Health = new Health(Stats);

@@ -1,5 +1,6 @@
 using RaidSim.Characters.Data;
 using RaidSim.Characters.Runtime;
+using RaidSim.Core.Combat;
 using RaidSim.Core.Common;
 using RaidSim.Core.Diagnostics;
 using RaidSim.Core.Simulation;
@@ -24,13 +25,20 @@ namespace RaidSim.Game.Bootstrap
         private readonly GameObject _defaultPrefab;
         private readonly float _placeholderHeight;
         private readonly Transform _parent;
+        private readonly AutoAttackSystem _autoAttack;
 
-        public ActorSpawner(SimulationContext context, GameObject defaultPrefab, float placeholderHeight, Transform parent)
+        public ActorSpawner(
+            SimulationContext context,
+            GameObject defaultPrefab,
+            float placeholderHeight,
+            Transform parent,
+            AutoAttackSystem autoAttack = null)
         {
             _context = context;
             _defaultPrefab = defaultPrefab;
             _placeholderHeight = Mathf.Max(0.2f, placeholderHeight);
             _parent = parent;
+            _autoAttack = autoAttack;
         }
 
         /// <summary>
@@ -75,6 +83,12 @@ namespace RaidSim.Game.Bootstrap
             }
 
             actor.PlaceAt(entry.Position, entry.FacingDirection);
+
+            // Registering here rather than inside CombatActor keeps the actor free of any
+            // knowledge of which systems happen to be running. A profile that is not enabled is
+            // ignored, so a practice target costs nothing.
+            _autoAttack?.Register(actor, actor.AutoAttack, actor.Target);
+
             return actor;
         }
 
