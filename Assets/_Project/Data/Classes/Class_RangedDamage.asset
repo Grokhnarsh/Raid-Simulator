@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f375d3479fd49e40e27cc0c3b2e722, type: 3}
+  m_Name: Class_RangedDamage
+  m_EditorClassIdentifier: 
+  _displayName: Stormcaller
+  _description: Damage from a safe distance, with the mobility to keep that distance while mechanics move the fight around.
+  _role: 4
+  _resourceKind: 1
+  _baseStats:
+  - Stat: 1
+    Value: 2900
+  - Stat: 2
+    Value: 2000
+  - Stat: 3
+    Value: 24
+  - Stat: 4
+    Value: 5.5
+  - Stat: 6
+    Value: 270
+  - Stat: 7
+    Value: 200
+  - Stat: 8
+    Value: 300
+  - Stat: 9
+    Value: 0.11
+  - Stat: 10
+    Value: 2
+  - Stat: 11
+    Value: 0.8
+  _statsPerLevel:
+  - Stat: 1
+    Value: 30
+  - Stat: 2
+    Value: 22
+  - Stat: 6
+    Value: 3.8
+  _preferredCombatRange: 28
+  _turnRateDegrees: 540
+  _radius: 0.45

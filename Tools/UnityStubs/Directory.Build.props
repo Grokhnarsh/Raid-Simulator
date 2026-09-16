@@ -1,0 +1,12 @@
+<Project>
+
+  <!--
+    Keeps build artefacts out of Assets/, where Unity would try to import them.
+    Must be set before Microsoft.Common.props is imported, hence a props file.
+  -->
+  <PropertyGroup>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)build/bin/</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)build/obj/</BaseIntermediateOutputPath>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------
+# Unity generated folders. All of these are rebuilt from Assets/ + ProjectSettings/
+# and must never be committed.
+# ---------------------------------------------------------------------------
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Asset meta files are NOT ignored: they carry the GUIDs every reference depends on.
+
+# ---------------------------------------------------------------------------
+# Generated solution and project files. Unity rewrites these on every import.
+# ---------------------------------------------------------------------------
+/*.csproj
+/*.unityproj
+/*.sln
+/*.suo
+/*.user
+/*.userprefs
+/*.pidb
+/*.booproj
+/*.svd
+/*.pdb
+/*.mdb
+/*.opendb
+/*.VC.db
+.vs/
+.idea/
+.vscode/
+
+# ---------------------------------------------------------------------------
+# Headless build artefacts from Tools/. The projects there are verification
+# harnesses; only their sources are committed.
+# ---------------------------------------------------------------------------
+/Tools/CoreBuild/build/
+/Tools/UnityStubs/build/
+**/bin/
+**/obj/
+
+# ---------------------------------------------------------------------------
+# Build outputs and platform leftovers
+# ---------------------------------------------------------------------------
+*.apk
+*.aab
+*.unitypackage
+*.app
+crashlytics-build.properties
+sysinfo.txt
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------------------
+# Blender working files. Source .blend files are tracked (see BLENDER_PIPELINE.md);
+# autosaves and backups are not.
+# ---------------------------------------------------------------------------
+*.blend1
+*.blend2
+*.blend@

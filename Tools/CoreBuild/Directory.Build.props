@@ -1,0 +1,15 @@
+<Project>
+
+  <!--
+    Keeps every build artefact of the headless projects inside Tools/CoreBuild/build/ so that
+    bin/ and obj/ folders never appear under Assets/, where Unity would try to import them.
+
+    These paths must be set before Microsoft.Common.props is imported, which is why they live in a
+    Directory.Build.props rather than in the project files.
+  -->
+  <PropertyGroup>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)build/$(MSBuildProjectName)/bin/</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)build/$(MSBuildProjectName)/obj/</BaseIntermediateOutputPath>
+  </PropertyGroup>
+
+</Project>
