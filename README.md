@@ -93,6 +93,10 @@ the game palette:
 
 Then in Unity: **EmberDepths ▸ Art ▸ Import Everything**.
 
+Three additional screenshot-inspired biome art kits (floor tiles, enemy idle
+rotations, and landmarks) are documented in
+[docs/reference-style-assets.md](docs/reference-style-assets.md).
+
 ---
 
 ## Layout
