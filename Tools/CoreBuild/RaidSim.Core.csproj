@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Headless mirror of the RaidSim.Core assembly definition.
+
+    The simulation kernel under Assets/_Project/Scripts/Core references nothing from Unity, so it
+    compiles with the plain .NET SDK. That is what lets the kernel be compiled and unit tested in CI
+    and on a machine with no Unity installation, and it is also the enforcement mechanism for the
+    architecture rule: if someone adds a `using UnityEngine;` to the kernel, this project stops
+    building. See ARCHITECTURE.md, "Simulation / presentation split".
+
+    Unity does not read this file; it uses RaidSim.Core.asmdef next to the sources.
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <AssemblyName>RaidSim.Core</AssemblyName>
+    <RootNamespace>RaidSim.Core</RootNamespace>
+    <Nullable>disable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- CS1591: not every public member needs XML docs. -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)../../Assets/_Project/Scripts/Core/**/*.cs" />
+  </ItemGroup>
+
+</Project>

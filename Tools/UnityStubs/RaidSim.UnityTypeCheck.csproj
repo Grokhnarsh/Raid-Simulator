@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Type-checks the engine-facing scripts under Assets/_Project/Scripts against the local Unity API
+    stubs, so a machine without Unity can still catch compile errors in the project's own code.
+
+    This is a verification target only; nothing it produces ships. Unity builds these same sources
+    through RaidSim.Runtime.asmdef and RaidSim.Editor.asmdef against the real engine, and that
+    remains the authoritative compile. See README.md in this folder for the limits of the stubs.
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <AssemblyName>RaidSim.UnityTypeCheck</AssemblyName>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!--
+      CS1591: not every public member needs an XML doc comment.
+      CS0649: "field is never assigned". Every [SerializeField] private field trips this outside
+              Unity, because the value comes from the serializer at load rather than from code.
+              Unity itself does not report these, so suppressing it here keeps the check honest
+              instead of forcing dummy initialisers into the game code.
+    -->
+    <NoWarn>$(NoWarn);CS1591;CS0649</NoWarn>
+    <!-- The editor-only sources are compiled here too, so define the symbol that guards them. -->
+    <DefineConstants>$(DefineConstants);UNITY_EDITOR;UNITY_STANDALONE_WIN;DEVELOPMENT_BUILD</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)*.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)../../Assets/_Project/Scripts/**/*.cs" />
+  </ItemGroup>
+
+</Project>

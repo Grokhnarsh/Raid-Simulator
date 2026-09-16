@@ -1,0 +1,39 @@
+# Normalise line endings so a Windows checkout and a CI Linux checkout agree.
+* text=auto
+
+# ---------------------------------------------------------------------------
+# Unity YAML. These merge correctly only with Unity's own SmartMerge tool
+# (UnityYAMLMerge), which is configured per developer; see CLAUDE.md.
+# ---------------------------------------------------------------------------
+*.unity     merge=unityyamlmerge eol=lf
+*.prefab    merge=unityyamlmerge eol=lf
+*.asset     merge=unityyamlmerge eol=lf
+*.mat       merge=unityyamlmerge eol=lf
+*.anim      merge=unityyamlmerge eol=lf
+*.controller merge=unityyamlmerge eol=lf
+*.meta      merge=unityyamlmerge eol=lf
+
+# ---------------------------------------------------------------------------
+# Text formats that must stay LF
+# ---------------------------------------------------------------------------
+*.cs            text eol=lf diff=csharp
+*.asmdef        text eol=lf
+*.inputactions  text eol=lf
+*.json          text eol=lf
+*.md            text eol=lf
+*.py            text eol=lf
+
+# ---------------------------------------------------------------------------
+# Binary assets. Marked so git never attempts a textual diff or merge.
+# ---------------------------------------------------------------------------
+*.blend  binary
+*.fbx    binary
+*.png    binary
+*.jpg    binary
+*.tga    binary
+*.psd    binary
+*.wav    binary
+*.ogg    binary
+*.mp3    binary
+*.ttf    binary
+*.otf    binary

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f375d3479fd49e40e27cc0c3b2e722, type: 3}
+  m_Name: Class_PracticeTarget
+  m_EditorClassIdentifier: 
+  _displayName: Practice Target
+  _description: A stationary target used to verify targeting, range and, from Phase 2, the damage pipeline. Not raid content.
+  _role: 0
+  _resourceKind: 0
+  _baseStats:
+  - Stat: 1
+    Value: 1500
+  - Stat: 4
+    Value: 0
+  - Stat: 7
+    Value: 500
+  - Stat: 8
+    Value: 500
+  _statsPerLevel: []
+  _autoAttack:
+    SwingInterval: 0
+    BaseDamage: 0
+    PowerCoefficient: 0
+    DamageType: 0
+    Range: 0
+    Label: None
+  _preferredCombatRange: 3
+  _turnRateDegrees: 0
+  _radius: 0.7

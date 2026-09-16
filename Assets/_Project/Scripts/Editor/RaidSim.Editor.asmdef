@@ -1,0 +1,19 @@
+{
+    "name": "RaidSim.Editor",
+    "rootNamespace": "RaidSim.EditorTools",
+    "references": [
+        "RaidSim.Core",
+        "RaidSim.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

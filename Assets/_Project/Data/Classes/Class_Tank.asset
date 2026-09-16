@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f375d3479fd49e40e27cc0c3b2e722, type: 3}
+  m_Name: Class_Tank
+  m_EditorClassIdentifier: 
+  _displayName: Guardian
+  _description: Holds enemies, soaks the damage meant for the group, and keeps threat above everyone else's.
+  _role: 1
+  _resourceKind: 2
+  _baseStats:
+  - Stat: 1
+    Value: 5200
+  - Stat: 2
+    Value: 100
+  - Stat: 3
+    Value: 0
+  - Stat: 4
+    Value: 5.5
+  - Stat: 5
+    Value: 120
+  - Stat: 7
+    Value: 900
+  - Stat: 8
+    Value: 300
+  - Stat: 9
+    Value: 0.05
+  - Stat: 10
+    Value: 2
+  - Stat: 11
+    Value: 3
+  _statsPerLevel:
+  - Stat: 1
+    Value: 60
+  - Stat: 5
+    Value: 1.5
+  - Stat: 7
+    Value: 9
+  _autoAttack:
+    SwingInterval: 2.4
+    BaseDamage: 45
+    PowerCoefficient: 0.6
+    DamageType: 0
+    Range: 3
+    Label: Weapon Swing
+  _preferredCombatRange: 3
+  _turnRateDegrees: 720
+  _radius: 0.55

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3440bbbe6e78922c4df3719e0c9337, type: 3}
+  m_Name: BootstrapConfig
+  m_EditorClassIdentifier: 
+  _cameraSettings: {fileID: 11400000, guid: 70df020a6d4d10c3df2e52e70ce72f48, type: 2}
+  _combatTuning: {fileID: 11400000, guid: 58fe67489ee73258088989226d3edc57, type: 2}
+  _controls: {fileID: 0}
+  _playerSpawn:
+    Character: {fileID: 11400000, guid: 9983c17078fee13823e99a57db2eb835, type: 2}
+    Faction: 1
+    Position: {x: 0, y: 0, z: -6}
+    FacingYaw: 0
+  _additionalSpawns:
+  - Character: {fileID: 11400000, guid: 9f411f828d940812b7cde38f971f93cf, type: 2}
+    Faction: 2
+    Position: {x: -6, y: 0, z: 10}
+    FacingYaw: 180
+  - Character: {fileID: 11400000, guid: 9f411f828d940812b7cde38f971f93cf, type: 2}
+    Faction: 2
+    Position: {x: 0, y: 0, z: 13}
+    FacingYaw: 180
+  - Character: {fileID: 11400000, guid: 9f411f828d940812b7cde38f971f93cf, type: 2}
+    Faction: 2
+    Position: {x: 6, y: 0, z: 10}
+    FacingYaw: 180
+  _defaultActorPrefab: {fileID: 0}
+  _arenaPrefab: {fileID: 0}
+  _placeholderFloorSize: {x: 80, y: 80}
+  _placeholderActorHeight: 1.9
+  _autoStart: 1
